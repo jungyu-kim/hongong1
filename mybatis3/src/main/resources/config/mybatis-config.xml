@@ -18,6 +18,6 @@
     </environment>
   </environments>
   <mappers>
-    <mapper resource="com/yedam/dao/MemberMapper.xmL"/>
+    <mapper resource="com/yedam/dao/MemberMapper.xml"/>
   </mappers>
 </configuration>
