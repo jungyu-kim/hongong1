@@ -2,6 +2,7 @@ package com.yedam.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,6 +21,8 @@ import com.yedam.vo.Member;
 // http 프로토콜을 데이터 전송 수신.
 // HttpServlet 상속 기능 구현.
 
+// IOC (제어의 역전)
+// 객체생성 -> init() -> service() -> destroy() : 서블릿의 생명주기.
 @WebServlet("/MemberAddServlet")
 public class MemberAddServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -58,7 +61,7 @@ public class MemberAddServlet extends HttpServlet {
 		member.setMemberName(name);
 		member.setPassword(passwd);
 		member.setPhone(phone);
-
+		
 		SqlSession sqlSession = DataSource.getInstance().openSession(true);
 		MemberMapper dao = sqlSession.getMapper(MemberMapper.class);
 		try {
@@ -67,6 +70,9 @@ public class MemberAddServlet extends HttpServlet {
 			}
 		} catch (Exception e) {
 			response.getWriter().print("NO");
+			
+			
+		
 
 		}
 	}
