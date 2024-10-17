@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com.yedam.commom.DataSource;
+import com.yedam.common.DataSource;
 import com.yedam.mapper.MemberMapper;
 import com.yedam.vo.MemberVO;
 
